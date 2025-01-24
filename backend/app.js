@@ -9,7 +9,7 @@ import transactionRoutes from "./Routers/Transactions.js";
 import userRoutes from "./Routers/userRouter.js";
 import path from "path";
 
-dotenv.config({ path: "./config/config.env" });
+dotenv.config();
 const app = express();
 
 const port = process.env.PORT;
@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(5000, () => {
-  console.log(`Server is listening on http://localhost:5000`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is listening on ${process.env.PORT}`);
 });
 //  module.exports = app
